@@ -21,27 +21,30 @@
             padding: 20px;
             margin: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-left: 8px solid #3498db; /* Ajout d'une bande colorée */
         }
 
         /* En-tête */
         .header {
             text-align: center;
+            color: #2c3e50;
         }
         .header h1 {
             margin: 0;
             font-size: 2em;
-            color: #333;
+            color: #3498db;
         }
         .header p {
             font-size: 1.2em;
-            color: #555;
+            color: #2c3e50;
         }
 
         /* Sections */
         h2 {
-            color: #333;
-            border-bottom: 2px solid #333;
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
             padding-bottom: 5px;
+            margin-top: 30px;
         }
         .section {
             margin: 20px 0;
@@ -51,6 +54,7 @@
         .contact-info, .profile {
             display: flex;
             justify-content: space-between;
+            color: #555;
         }
         .contact-info div, .profile div {
             width: 45%;
@@ -68,8 +72,22 @@
         /* Expériences professionnelles */
         .experience-item {
             margin-bottom: 15px;
+            color: #2c3e50;
         }
 
+        /* Couleurs pour chaque section */
+        .section p, .section ul li {
+            color: #555;
+        }
+
+        /* Mise en forme des liens */
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -84,37 +102,25 @@
     <!-- Contact et profil -->
     <div class="section contact-info">
         <div>
-            <strong>Contact</strong>
+            <strong style="color: #3498db;">Contact</strong>
             <p>Téléphone : 06.14.98.19.75</p>
             <p>Email : <a href="mailto:nicolas2.bardin2@gmail.com">nicolas2.bardin2@gmail.com</a></p>
-            <p>Adresse : $$$, 79000 Niort</p>
+            <p>Adresse : 79000 Niort</p>
         </div>
         <div>
-            <strong>Profil</strong>
+            <strong style="color: #3498db;">Profil</strong>
             <p>24 ans</p>
             <p>Permis B, véhicule personnel</p>
         </div>
     </div>
 
-    <!-- Compétences -->
-    <div class="section">
-        <h2>Compétences</h2>
-        <ul>
-            <li>Autonome</li>
-            <li>Manuel</li>
-            <li>Sens de l’écoute</li>
-            <li>Sens des responsabilités</li>
-            <li>Aisance à l’oral</li>
-            <li>Bon contact avec la clientèle</li>
-        </ul>
-    </div>
 
     <!-- Formations -->
     <div class="section">
         <h2>Formations et Diplômes</h2>
-        <p><strong>2023-2025</strong> - Master manager en architecture et applications logicielles • CESI de La Rochelle</p>
-        <p><strong>2019-2023</strong> - Licence informatique générale • Université de La Rochelle</p>
-        <p><strong>2016-2019</strong> - Baccalauréat général scientifique option ISN • Lycée Jean Macé de Niort</p>
+        <p><strong>2023-2025</strong> - Master manager en architecture et applications logicielles • <span style="color: #2c3e50;">CESI de La Rochelle</span></p>
+        <p><strong>2019-2023</strong> - Licence informatique générale • <span style="color: #2c3e50;">Université de La Rochelle</span></p>
+        <p><strong>2016-2019</strong> - Baccalauréat général scientifique option ISN • <span style="color: #2c3e50;">Lycée Jean Macé de Niort</span></p>
     </div>
 
     <!-- Expériences professionnelles -->
@@ -138,6 +144,31 @@
         </div>
     </div>
 
+
+<!-- Compétences -->
+<div class="section">
+    <h2>Compétences</h2>
+    <ul>
+        <li>Autonome</li>
+        <li>Manuel</li>
+        <li>Sens de l’écoute</li>
+        <li>Sens des responsabilités</li>
+        <li>Aisance à l’oral</li>
+        <li>Bon contact avec la clientèle</li>
+    </ul>
+</div>
+
+
+<!-- Compétences Techniques -->
+<div class="section">
+    <h2>Compétences Techniques</h2>
+    <p><strong>Langages :</strong> Shell, Java, HTML, SQL, Python</p>
+    <p><strong>Bases de données :</strong> PostgreSQL</p>
+    <p><strong>Outils :</strong> Visual Studio Code, Final Cut Pro, Arduino, Notepad++, GitHub</p>
+    <p><strong>Connaissances :</strong> réseau sécurisé, protocole, sécurité, macOS, Windows, Linux</p>
+</div>
+
+
     <!-- Loisirs -->
     <div class="section">
         <h2>Loisirs</h2>
@@ -146,14 +177,7 @@
         <p>Conception d'objets en 3D</p>
     </div>
 
-    <!-- Compétences Techniques -->
-    <div class="section">
-        <h2>Compétences Techniques</h2>
-        <p><strong>Langages :</strong> Shell, Java, HTML, SQL, Python</p>
-        <p><strong>Bases de données :</strong> PostgreSQL</p>
-        <p><strong>Outils :</strong> Visual Studio Code, Bloc-note, Imovie, Arduino, Notepad++</p>
-        <p><strong>Connaissances :</strong> réseau sécurisé, protocole, sécurité, macOS, Windows, Linux</p>
-    </div>
+    
 </div>
 
 </body>
