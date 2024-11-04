@@ -3,74 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Nicolas Bardin</title>
+    <title>CV de Nicolas Bardin</title>
     <style>
+        /* Style général */
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 800px;
+            background: #fff;
+            padding: 20px;
             margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .section {
-            margin-bottom: 20px;
-        }
-
-        .title {
-            font-weight: bold;
+        /* En-tête */
+        .header {
             text-align: center;
         }
-
-        .contact {
-            font-size: 14px;
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #333;
+        }
+        .header p {
+            font-size: 1.2em;
+            color: #555;
         }
 
-        .experience {
-            margin-left: 20px;
+        /* Sections */
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        .section {
+            margin: 20px 0;
         }
 
-        .skills {
-            column-count: 2;
+        /* Détails personnels */
+        .contact-info, .profile {
+            display: flex;
+            justify-content: space-between;
         }
+        .contact-info div, .profile div {
+            width: 45%;
+        }
+
+        /* Liste de compétences et autres listes */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Expériences professionnelles */
+        .experience-item {
+            margin-bottom: 15px;
+        }
+
     </style>
 </head>
 <body>
-    <div class="section">
-        <h2 class="title">BARDIN Nicolas</h2>
-        <div class="contact">
-            06.14.98.19.75<br>
-            nicolas2.bardin2@gmail.com
+
+<div class="container">
+    <!-- En-tête -->
+    <div class="header">
+        <h1>Nicolas Bardin</h1>
+        <p>Objectif : Architecte Logiciel</p>
+    </div>
+
+    <!-- Contact et profil -->
+    <div class="section contact-info">
+        <div>
+            <strong>Contact</strong>
+            <p>Téléphone : 06.14.98.19.75</p>
+            <p>Email : <a href="mailto:nicolas2.bardin2@gmail.com">nicolas2.bardin2@gmail.com</a></p>
+            <p>Adresse : $$$, 79000 Niort</p>
+        </div>
+        <div>
+            <strong>Profil</strong>
+            <p>24 ans</p>
+            <p>Permis B, véhicule personnel</p>
         </div>
     </div>
 
+    <!-- Compétences -->
     <div class="section">
-        <h2 class="title">OBJECTIF : Architecte Logiciel</h2>
-    </div>
-
-    <div class="section">
-        <h2 class="title">FORMATIONS ET DIPLÔMES</h2>
+        <h2>Compétences</h2>
         <ul>
-            <li>2023-2025 : Master manager en architecture et applications logicielles (CESI de La Rochelle)</li>
-            </ul>
+            <li>Autonome</li>
+            <li>Manuel</li>
+            <li>Sens de l’écoute</li>
+            <li>Sens des responsabilités</li>
+            <li>Aisance à l’oral</li>
+            <li>Bon contact avec la clientèle</li>
+        </ul>
     </div>
 
+    <!-- Formations -->
     <div class="section">
-        <h2 class="title">EXPÉRIENCES PROFESSIONNELLES</h2>
-        <div class="experience">
-            <h3>Alternant à la MAIF (2023-2025)</h3>
-            <ul>
-                <li>Missions : formation, coordinateur, administration fonctionnelle, paramétrage serveur, integration progiciel, monter de version des applications</li>
-            </ul>
-            </div>
+        <h2>Formations et Diplômes</h2>
+        <p><strong>2023-2025</strong> - Master manager en architecture et applications logicielles • CESI de La Rochelle</p>
+        <p><strong>2019-2023</strong> - Licence informatique générale • Université de La Rochelle</p>
+        <p><strong>2016-2019</strong> - Baccalauréat général scientifique option ISN • Lycée Jean Macé de Niort</p>
     </div>
 
+    <!-- Expériences professionnelles -->
     <div class="section">
-        <h2 class="title">COMPÉTENCES</h2>
-        <div class="skills">
-            <h3>Langages</h3>
-            <ul>
-                <li>Shell, Java, HTML, SQL, Python</li>
-            </ul>
-            </div>
+        <h2>Expériences Professionnelles</h2>
+        <div class="experience-item">
+            <p><strong>Alternant à la MAIF</strong> • 2023-2025</p>
+            <p>Missions : formation, coordination, administration fonctionnelle, paramétrage serveur, intégration progiciel, mise à jour d'applications</p>
+        </div>
+        <div class="experience-item">
+            <p><strong>Vendeur à Leroy Merlin</strong> • 2022</p>
+            <p>Missions : conseiller de vente en domotique, électricité, plomberie et confort</p>
+        </div>
+        <div class="experience-item">
+            <p><strong>Agent de service hôtelier</strong> • EHPAD de Beceleuf • 2020-2021</p>
+            <p>Missions : service de restauration, entretien</p>
+        </div>
+        <div class="experience-item">
+            <p><strong>Animateur</strong> • Centre de loisirs de Coulonges sur l’Autize • 2017-2019</p>
+            <p>Missions : encadrement des enfants, création d’activités, collaboration d’équipe</p>
+        </div>
     </div>
 
-    </body>
+    <!-- Loisirs -->
+    <div class="section">
+        <h2>Loisirs</h2>
+        <p>Pratique de différents sports : tennis, foot gaélique, natation, rugby, etc.</p>
+        <p>Passionné par les nouvelles technologies</p>
+        <p>Conception d'objets en 3D</p>
+    </div>
+
+    <!-- Compétences Techniques -->
+    <div class="section">
+        <h2>Compétences Techniques</h2>
+        <p><strong>Langages :</strong> Shell, Java, HTML, SQL, Python</p>
+        <p><strong>Bases de données :</strong> PostgreSQL</p>
+        <p><strong>Outils :</strong> Visual Studio Code, Bloc-note, Imovie, Arduino, Notepad++</p>
+        <p><strong>Connaissances :</strong> réseau sécurisé, protocole, sécurité, macOS, Windows, Linux</p>
+    </div>
+</div>
+
+</body>
 </html>
