@@ -1,33 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Mon tableau</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Nicolas Bardin</title>
     <style>
-        /* Ajoutez ici vos styles CSS pour le tableau */
-        table {
-            border-collapse: collapse;
-            width: 100%;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
         }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
+
+        .section {
+            margin-bottom: 20px;
         }
-        tr:nth-child(even){background-color: #f2f2f2}
+
+        .title {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .contact {
+            font-size: 14px;
+        }
+
+        .experience {
+            margin-left: 20px;
+        }
+
+        .skills {
+            column-count: 2;
+        }
     </style>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Colonne 1</th>
-            <th>Colonne 2</th>
-            <th>Colonne 3</th>
-        </tr>
-        <tr>
-            <td>Données 1</td>
-            <td>Données 2</td>
-            <td>Données 3</td>
-        </tr>
-        </table>
-</body>
+    <div class="section">
+        <h2 class="title">BARDIN Nicolas</h2>
+        <div class="contact">
+            06.14.98.19.75<br>
+            nicolas2.bardin2@gmail.com
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="title">OBJECTIF : Architecte Logiciel</h2>
+    </div>
+
+    <div class="section">
+        <h2 class="title">FORMATIONS ET DIPLÔMES</h2>
+        <ul>
+            <li>2023-2025 : Master manager en architecture et applications logicielles (CESI de La Rochelle)</li>
+            </ul>
+    </div>
+
+    <div class="section">
+        <h2 class="title">EXPÉRIENCES PROFESSIONNELLES</h2>
+        <div class="experience">
+            <h3>Alternant à la MAIF (2023-2025)</h3>
+            <ul>
+                <li>Missions : formation, coordinateur, administration fonctionnelle, paramétrage serveur, integration progiciel, monter de version des applications</li>
+            </ul>
+            </div>
+    </div>
+
+    <div class="section">
+        <h2 class="title">COMPÉTENCES</h2>
+        <div class="skills">
+            <h3>Langages</h3>
+            <ul>
+                <li>Shell, Java, HTML, SQL, Python</li>
+            </ul>
+            </div>
+    </div>
+
+    </body>
 </html>
