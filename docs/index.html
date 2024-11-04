@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bouton interactif</title>
+    <title>Mon site web</title>
     <style>
-        #myButton, #cvButton {
-            position: absolute;
+        body {
+            text-align: center;
+        }
+
+        button {
+            background-color: #4CAF50; /* Vert */
+            color: white;
+            padding: 20px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            position: absolute; /* Permet de changer la position sur la page */
+            transition: top 0.5s, left 0.5s; /* Animation douce lors du déplacement */
+        }
+
+        img {
+            width: 200px; /* Ajustez la largeur selon vos besoins */
+            height: auto; /* Maintient les proportions */
+            margin-top: 20px; /* Espace entre le bouton et le GIF */
         }
     </style>
 </head>
 <body>
-    <button id="myButton">Cliquez-moi !</button>
-    <button id="cvButton" onclick="location.href='acceuil.html'" style="display: none;">Découvrir le CV de Nicolas</button>
+    <button id="moveButton" onclick="moveButton()">Découvrir le CV de Nicolas</button>
+    <p></p>
+
     <script>
-        const myButton = document.getElementById('myButton');
-        const cvButton = document.getElementById('cvButton');
-        let count = 1;
-        const maxMoves = 3;
+        // Nombre de clics initialisé à zéro
+        let clickCount = 0;
 
-        myButton.addEventListener('click', () => {
-            if (count < maxMoves) {
-                const windowWidth = window.innerWidth;
-                const windowHeight = window.innerHeight;
-                const buttonWidth = myButton.offsetWidth;
-                const buttonHeight = myButton.offsetHeight;
+        // Fonction pour déplacer le bouton
+        function moveButton() {
+            clickCount++;
 
-                const newX = Math.random() * (windowWidth - buttonWidth);
-                const newY = Math.random() * (windowHeight - buttonHeight);
+            // Positions du bouton après chaque clic
+            const positions = [
+                { top: '100px', left: '50%' },
+                { top: '200px', left: '30%' },
+                { top: '150px', left: '70%' }
+            ];
 
-                myButton.style.left = newX + 'px';
-                myButton.style.top = newY + 'px';
-
-                count++;
+            // Si on a atteint 3 clics, redirection
+            if (clickCount >= 3) {
+                window.location.href = 'acceuil.html';
             } else {
-                myButton.style.display = 'none';
-                cvButton.style.display = 'block';
-                cvButton.style.left = '50%';
-                cvButton.style.top = '50%';
-                cvButton.style.transform = 'translate(-50%, -50%)';
+                // Mise à jour de la position du bouton
+                const position = positions[clickCount - 1];
+                const button = document.getElementById('moveButton');
+                button.style.top = position.top;
+                button.style.left = position.left;
             }
-        });
+        }
     </script>
 </body>
 </html>
