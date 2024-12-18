@@ -5,60 +5,80 @@
     <style>
         body {
             text-align: center;
+            font-family: Arial, sans-serif;
         }
 
         button {
             background-color: #4CAF50; /* Vert */
             color: white;
-            padding: 20px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
+            padding: 15px 30px;
             font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
+            border: none;
             border-radius: 12px;
             position: absolute; /* Permet de changer la position sur la page */
             transition: top 0.5s, left 0.5s; /* Animation douce lors du déplacement */
+            cursor: pointer;
         }
 
-        img {
-            width: 200px; /* Ajustez la largeur selon vos besoins */
-            height: auto; /* Maintient les proportions */
-            margin-top: 20px; /* Espace entre le bouton et le GIF */
+        #codePrompt {
+            margin-top: 50px;
+            display: none; /* Caché par défaut */
         }
     </style>
 </head>
 <body>
-    <button id="moveButton" onclick="moveButton()">Découvrir le CV de Nicolas</button>
-    <p></p>
-    <p></p>
-    <img id="moveButton" src="Image/gif-acceuil.gif" alt="GIF descriptif">
+    <h1>Bienvenue sur mon site web</h1>
+    <div id="codePrompt">
+        <label for="accessCode">Entrez le code d'accès :</label>
+        <input type="password" id="accessCode" placeholder="Code d'accès">
+        <button onclick="checkCode()">Valider</button>
+    </div>
+
+    <div id="buttonsContainer" style="display: none;">
+        <button id="cvButton" onclick="moveButton('cvButton')">Découvrir le CV</button>
+        <button id="serverButton" onclick="moveButton('serverButton')">Accéder au Serveur</button>
+    </div>
 
     <script>
-        // Nombre de clics initialisé à zéro
-        let clickCount = 0;
+        // Initialisation
+        const validCode = "0000"; // Code valide
+        let moveCounts = { cvButton: 0, serverButton: 0 };
 
-        // Fonction pour déplacer le bouton
-        function moveButton() {
-            clickCount++;
+        // Afficher le champ pour le code d'accès
+        document.getElementById('codePrompt').style.display = 'block';
 
-            // Positions du bouton après chaque clic
-            const positions = [
-                { top: '100px', left: '50%' },
-                { top: '200px', left: '30%' },
-                { top: '150px', left: '70%' }
-            ];
-
-            // Si on a atteint 3 clics, redirection
-            if (clickCount >= 3) {
-                window.location.href = 'acceuil.html';
+        // Vérification du code d'accès
+        function checkCode() {
+            const inputCode = document.getElementById('accessCode').value;
+            if (inputCode === validCode) {
+                alert("Accès autorisé !");
+                document.getElementById('codePrompt').style.display = 'none';
+                document.getElementById('buttonsContainer').style.display = 'block';
             } else {
-                // Mise à jour de la position du bouton
-                const position = positions[clickCount - 1];
-                const button = document.getElementById('moveButton');
-                button.style.top = position.top;
-                button.style.left = position.left;
+                alert("Code incorrect. Réessayez !");
+            }
+        }
+
+        // Fonction pour déplacer un bouton
+        function moveButton(buttonId) {
+            moveCounts[buttonId]++;
+
+            // Si le bouton a bougé 3 fois, redirection
+            if (moveCounts[buttonId] >= 3) {
+                if (buttonId === 'cvButton') {
+                    window.location.href = 'cv.html';
+                } else if (buttonId === 'serverButton') {
+                    window.location.href = 'server.html';
+                }
+            } else {
+                // Calcul des nouvelles positions aléatoires
+                const top = Math.random() * (window.innerHeight - 100) + 'px';
+                const left = Math.random() * (window.innerWidth - 100) + 'px';
+
+                // Appliquer les nouvelles positions
+                const button = document.getElementById(buttonId);
+                button.style.top = top;
+                button.style.left = left;
             }
         }
     </script>
